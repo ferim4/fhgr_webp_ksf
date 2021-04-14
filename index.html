@@ -1,1 +1,89 @@
-test
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/template.css">
+    <!-- BootstrapCDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Title -->
+    <title>Data from Amazon</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Amazon Data</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" action='/search' method='POST'>
+            <input type="text" class="form-control" name="search" placeholder="Suchen nach...">
+            <button class="btn btn-dark" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      </div>
+      <div class="container">
+        <div class="starter-template">
+          <h1>Welcome to Amazon Data</h1>
+          <p class="lead">
+            What would you like to do?
+          </p>
+        </div>
+      </div>
+      
+      <div class="container">
+          <h4><i><b>Produktdaten aus Amazon übersichtlich darstellen</b></i></h4>
+          <h5><b>Ausgangslage</b></h5>  
+            <p>
+              Für das Modul Webprogrammierung hat die Projektgruppe den Auftrag erhalten, eine Applikation zur Datenvisualisierung zu bauen. Die Daten werden durch eine API angezogen und anschließend in JavaScript verwendet.
+            </p>
+          <h5><b>Datennutzung</b></h5>    
+            <p>
+              Für das vorliegende Projekt hat sich die Gruppe entschieden, mittels der Rainforest API Daten, welche von Amazon gescrapet wurden, zu visualisieren. Dabei wird der Hauptfokus in der Anzeige der Produkte liegen. Zudem kann sich die Projektgruppe noch vorstellen, folgende Daten einzubauen: 
+              -	Kundenreviews
+              -	Suchergebnisse
+            </p>
+          <h5><b>Visualisierung</b></h5> 
+            <p>
+              Die Projektgruppe kann sich vorstellen, die Daten aus der API folgendermaßen darzustellen: 
+              -	Liniendiagramm, wie sich das Kaufverhalten über die Jahre verändert hat (vgl. Bloomberg)
+              -	Weltkarte, welche Produkte in welchen Teilen der Welt am meisten gekauft werden
+            </p>
+          
+          <h5><b>Verwendungszweck</b></h5> 
+            <p>
+              Im Semester 7 wird sich die Projektgruppe mit dem Erstellen eines eCommerce Stores in Shopify auseinandersetzen. Diese Webapplikation soll eine Grundlage schaffen, um die Produktrecherche so einfach wie möglich zu gestalten.
+            </p>
+      </div>
+      
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Bestseller</h2>
+              <span class="glyphicon glyphicon-star-empty" data-toggle="modal" data-target="#myModal"></span></a>
+              <!-- here is the section to add things -->
+            </div>
+            <div class="col-sm-6">
+              <h2>Geopraphical</h2>
+              <a href="dashboard.html"><span class="glyphicon glyphicon-leaf"></span></a>
+            </div>
+          </div>
+      </div>
+</body>

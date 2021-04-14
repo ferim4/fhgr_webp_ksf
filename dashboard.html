@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/template.css">
+    <!-- BootstrapCDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Title -->
+    <title>Data from Amazon</title>
+</head>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Amazon Data</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" action='/search' method='POST'>
+          <input type="text" class="form-control" name="search" placeholder="Suchen nach...">
+          <button class="btn btn-dark" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+  <h1 class="page-header">Welcome, Master!</h1>
+</div>
+  <div class="container">
+    <div class="row">
+          <!--Section to add diagram/graphic -->
+
+          <p>here comes ta graphic</p>>
+    </div>  
+  </div>
+  <div class="container">
+    <h2 class="sub-header">Datenbank</h2>
+    <div class="table-responsive">
+                <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Vorname</th>
+                          <th>Name</th>
+                          <th>E-Mail</th>
+                          <th>Strasse</th>
+                          <th>PLZ</th>
+                          <th>Wohnort</th>
+                          <th>Geburtstag</th>
+                          <th>Zivilstand</th>
+                          <th></th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                          <td>{{element["userid"]}}</td>
+                          <td>{{element["vorname"]}}</td>
+                          <td>{{element["name"]}}</td>
+                          <td>{{element["mail"]}}</td>
+                          <td>{{element["street"]}}</td>
+                          <td>{{element["plz"]}}</td>
+                          <td>{{element["location"]}}</td>
+                          <td>{{element["birthday"]}}</td>
+                          <td>{{element["zivilstand"]}}</td>
+                          <!--Edit Symbol wird mit der URL 127.0.0.1:5000 korrekt angezeigt, jedoch mit localhost:5000 wird dieser Überdimensional angezeigt-->
+                          <td><a href="#"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                        </tr>
+
+                  </tbody>
+            </table>
+            <a href="#" target="blank">
+              <button class="btn btn-default">Export Databasefile</button>
+            </a>
+    </div>
+  </div>

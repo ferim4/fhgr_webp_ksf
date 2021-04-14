@@ -1,0 +1,37 @@
+body {
+    padding-top: 50px;
+}
+
+.btn-primary{
+    margin-top:10px;
+}
+
+.app-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.glyphicon-leaf {
+    font-size: 200px;
+}
+
+.glyphicon-pencil {
+    font-size: 20px;
+}
+
+.glyphicon-star-empty{
+    color:#337ab7;
+    font-size: 200px;
+}
+
+.glyphicon-star-empty:hover {
+    color:#23527c;
+}
+
+body .glyphicon-star-empty, body .glyphicon-star-empty:focus {
+color: #337ab7;
+}
+
+.glyphicon-star-empty:hover {
+color: #23527c;
+ }
