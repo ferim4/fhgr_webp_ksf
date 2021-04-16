@@ -103,3 +103,15 @@ body {
     display: inline-block;
     border-radius: 50%;
   }
+
+  /*
+   * temporary settings, needed only for prototype
+   */
+   
+
+  .img-dashboard {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
