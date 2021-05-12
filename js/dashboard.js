@@ -68,5 +68,5 @@ function bestseller() {
 
 }
 
-
+//call the function bestseller, which calls the rainforest API and it's bestseller data for memorycards
 bestseller();
