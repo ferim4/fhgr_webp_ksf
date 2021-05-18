@@ -11,9 +11,9 @@
   <!-- BootstrapCDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- chart.js CDN-->
+  <!-- chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
-  <!-- nprogress js-->
+  <!-- nprogress js -->
   <script src="js/nprogress.js"></script>
   <!-- Title -->
   <title>Data from Amazon</title>
@@ -52,53 +52,11 @@
       <canvas id="chart" width="400" height="400">
         <!-- For more information, what here is going to be displayed have a look in dashboard.js file -->
       </canvas>
+      <img src="" id="imgConverted">
+      <button type="button" id="btn-download">Save Chart Image</button>
     </div>
   </div>
-  <div class="container">
-    <h2 class="sub-header">Datenbank</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Vorname</th>
-            <th>Name</th>
-            <th>E-Mail</th>
-            <th>Strasse</th>
-            <th>PLZ</th>
-            <th>Wohnort</th>
-            <th>Geburtstag</th>
-            <th>Zivilstand</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{element["userid"]}}</td>
-            <td>{{element["vorname"]}}</td>
-            <td>{{element["name"]}}</td>
-            <td>{{element["mail"]}}</td>
-            <td>{{element["street"]}}</td>
-            <td>{{element["plz"]}}</td>
-            <td>{{element["location"]}}</td>
-            <td>{{element["birthday"]}}</td>
-            <td>{{element["zivilstand"]}}</td>
-            <!--Edit Symbol wird mit der URL 127.0.0.1:5000 korrekt angezeigt, jedoch mit localhost:5000 wird dieser Überdimensional angezeigt-->
-            <td><a href="#"><span class="glyphicon glyphicon-pencil"></span></a></td>
-          </tr>
-
-        </tbody>
-      </table>
-      <!-- TO DO: button to export chart into csv or png -->
-      <a href="#" target="blank">
-        <button class="btn btn-default">Export Databasefile</button>
-      </a>
-
-
-    </div>
-  </div>
-  <script src="js/dashboard.js">
-  </script>
+  <script src="js/dashboard.js"></script>
 </body>
 
 </html>

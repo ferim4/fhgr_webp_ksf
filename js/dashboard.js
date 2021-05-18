@@ -40,7 +40,9 @@ function bestseller() {
     //Start NProgress Library  and shows loading screen because Rainforest API call lastst min. 6seconds
     NProgress.start();
     //Jquery delivery notation => the three dots (...) are needed that the json can be extracted and to describe the properties
-    $.get("https://api.rainforestapi.com/request", {...params}, function (data) {
+    $.get("https://api.rainforestapi.com/request", {
+        ...params
+    }, function (data) {
         //Get only the ten first result from the bestseller, because 50 is standard from the Rainforest API & to much for a chart
         const topTenBest = data.bestsellers.slice(0, 10);
         //goes through every element from the array and gives back the title from bestseller
@@ -61,12 +63,40 @@ function bestseller() {
         ];
 
         updateChart(labels, chartData, colors);
-        
+
         //When the API Call is finished and all Data are fully the whole chart will show up
         NProgress.done();
     })
 
 }
 
+
+// TO DO: describe function and sources
+function exportImage() {
+    const ownChart = document.querySelector("#chart");
+    const btnDownload = document.querySelector("#btn-download");
+
+    btnDownload.addEventListener("click", function () {
+        //IE/Edge Support (PNG Only) as our research showed that only png is supported
+        if (window.navigator.msSaveBlob) {
+            window.navigator.msSaveBlob(chart.msToBlob(), "chart-image.png");
+        } else {
+            const a = document.createElement("a");
+
+            document.body.appendChild(a);
+            a.href = ownChart.toDataURL();
+            a.download = "chart-image.png";
+            a.click();
+            document.body.removeChild(a);
+        }
+    });
+}
+
+
+
+
+
 //call the function bestseller, which calls the rainforest API and it's bestseller data for memorycards
 bestseller();
+// TO DO:
+exportImage();
