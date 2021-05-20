@@ -71,22 +71,32 @@ function bestseller() {
 }
 
 
-// TO DO: describe function and sources
+// function to convert canvas (our Chart) to an Image
 function exportImage() {
+    //select our chart
     const ownChart = document.querySelector("#chart");
+    //define which button should be selected in the dashboard.html
     const btnDownload = document.querySelector("#btn-download");
 
     btnDownload.addEventListener("click", function () {
-        //IE/Edge Support (PNG Only) as our research showed that only png is supported
+        //IE/Edge Support (PNG Only) as our research showed that only png is supported 
+        // and we had already the discussion that not every browser has the same behaviour 
+
+        //the msSaveBlob method is exclusive for IE/Edge and here we're checking this
         if (window.navigator.msSaveBlob) {
             window.navigator.msSaveBlob(chart.msToBlob(), "chart-image.png");
+            //this part below should support for sure at least chrome and firefox
         } else {
             const a = document.createElement("a");
-
+            
+            // to do: comment
             document.body.appendChild(a);
+            //you also can define what image type it should be exported & the image qualit can be set here
             a.href = ownChart.toDataURL();
+            //be sure if you change the image type above, you also have to change it here then
             a.download = "chart-image.png";
             a.click();
+            // to do: comment
             document.body.removeChild(a);
         }
     });
@@ -98,5 +108,5 @@ function exportImage() {
 
 //call the function bestseller, which calls the rainforest API and it's bestseller data for memorycards
 bestseller();
-// TO DO:
+//calls the function to export the canvas which is shown in the dashboard.html as png and hopefully all browser are supported
 exportImage();
