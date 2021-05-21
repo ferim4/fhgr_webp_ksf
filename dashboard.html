@@ -47,6 +47,29 @@
   <div class="container">
     <h1 class="page-header">Welcome, Master!</h1>
   </div>
+  <!--
+  categories:
+    electronics id = 493964
+    books id = 1000
+    beauty id = 11055981
+    home & kitchen id = 1063498
+    office products id = 1084128
+    clothing, shoes & jewelery id = 7141124011
+-->
+  <div class="container">
+    <div class="menu">
+      <h4><strong>Categories:</strong></h4>
+      <ul id="categories">
+        <!--Electronics has the class selected because by clicking on the Dashboard at first we give away the electronics ID as a parameter -->
+        <li><a href="#" class="selected" data-name="493964">Electronics</a></li>
+        <li><a href="#" data-name="1000">Books</a></li>
+        <li><a href="#" data-name="11055981">Beauty</a></li>
+        <li><a href="#" data-name="1063498">Home & Kitchen</a></li>
+        <li><a href="#" data-name="1084128">Office Products</a></li>
+        <li><a href="#" data-name="7141124011">Clothing, Shoes & Jewelry</a></li>
+      </ul>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
       <canvas id="chart" width="400" height="400">

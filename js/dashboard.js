@@ -12,8 +12,41 @@ const myChart = new Chart(ctx, {
             backgroundColor: [],
         }]
     },
+    //To name the axes on the chart
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Product'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Rank'
+
+                }
+            }
+        }
+
+    }
 });
 
+//Making a connection from categoryList to the html class categories for all links
+const categoryList = $("#categories a");
+categoryList.click(function (event) {
+    //This is to prevent a Default value while loading
+    event.preventDefault()
+    //By clicking on another link all classes from the other links will be removed
+    categoryList.attr('class', '');
+    //By clicking on a new link it will get the class selected
+    $(this).addClass("selected")
+    //By clicking on a category we save the data-name of the category as an ID to use it for the url
+    const id = $(this).data("name")
+    //Giving the parameter id to the function bestseller
+    bestseller(id)
+})
 
 //This function is needed to update the Chart on the dashboard.html page
 function updateChart(labels, data, backgroundcolors) {
@@ -30,12 +63,13 @@ function updateChart(labels, data, backgroundcolors) {
 }
 
 //Function needed to call the API Rainforest, especially the bestseller part for memorycards
-function bestseller() {
+function bestseller(id) {
     const params = {
         //Please insert here your own API Key, because in Rainforest API trial Version the requests are limited by 100 requests/calls
         api_key: "",
         type: "bestsellers",
-        url: "https://www.amazon.com/s/zgbs/pc/516866"
+        //Url will built by giving the category as an ID by clicking on one
+        url: `https://www.amazon.com/s/zgbs/pc/${id}`
     }
     //Start NProgress Library  and shows loading screen because Rainforest API call lastst min. 6seconds
     NProgress.start();
@@ -50,9 +84,9 @@ function bestseller() {
         const labels = topTenBest.map(bestseller => bestseller.title);
         const chartData = topTenBest.map(bestseller => bestseller.rank);
         const colors = [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
+            'rgba(212, 175, 55, 0.2)',
+            'rgba(192,192,192, 0.2)',
+            'rgba(191, 137, 112, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
             'rgba(255, 159, 64, 0.2)',
@@ -88,7 +122,7 @@ function exportImage() {
             //this part below should support for sure at least chrome and firefox
         } else {
             const a = document.createElement("a");
-            
+
             // to do: comment
             document.body.appendChild(a);
             //you also can define what image type it should be exported & the image qualit can be set here
@@ -107,6 +141,6 @@ function exportImage() {
 
 
 //call the function bestseller, which calls the rainforest API and it's bestseller data for memorycards
-bestseller();
+bestseller("493964");
 //calls the function to export the canvas which is shown in the dashboard.html as png and hopefully all browser are supported
 exportImage();
