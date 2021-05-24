@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -16,9 +15,8 @@
   <!-- nprogress js -->
   <script src="js/nprogress.js"></script>
   <!-- Title -->
-  <title>Data from Amazon</title>
+  <title>Amazon Data Dashboard</title>
 </head>
-
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -34,7 +32,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar">
-          <li><a href="index.html">Home</a></li>
+          <!-- <li><a href="index.html">Home</a></li> -->
           <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
         <form class="navbar-form navbar-right" action='#' method='POST'>
@@ -47,15 +45,15 @@
   <div class="container">
     <h1 class="page-header">Welcome, Master!</h1>
   </div>
-  <!--
-  categories:
-    electronics id = 493964
-    books id = 1000
-    beauty id = 11055981
-    home & kitchen id = 1063498
-    office products id = 1084128
-    clothing, shoes & jewelery id = 7141124011
--->
+    <!--
+      categories:
+        electronics id = 493964
+        books id = 1000
+        beauty id = 11055981
+        home & kitchen id = 1063498
+        office products id = 1084128
+        clothing, shoes & jewelery id = 7141124011
+    -->
   <div class="container">
     <div class="menu">
       <h4><strong>Categories:</strong></h4>
@@ -75,6 +73,7 @@
       <canvas id="chart" width="400" height="400">
         <!-- For more information, what here is going to be displayed have a look in dashboard.js file -->
       </canvas>
+      <!-- check dashboard.js to see what this the function behind this button is -->
       <button type="button" id="btn-download">Save Chart Image</button>
     </div>
   </div>

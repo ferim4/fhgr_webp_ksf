@@ -35,3 +35,8 @@ color: #337ab7;
 .glyphicon-star-empty:hover {
 color: #23527c;
  }
+
+ mark {
+    background-color: yellow;
+    color: black;
+  }
